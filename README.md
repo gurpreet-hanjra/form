@@ -1,3 +1,26 @@
+# Form component
+
+Reusable form component.
+
+### API decisions
+
+- Declarative: `<Form handleSubmit={callback}></Form>` Decalative API, just wrap inputs in Form component and pass callback to get data.
+- Easy to use: - No learning curve, passed HTML inputs and form is ready. HTML forms are already known to the developers.
+- Based on HTML forms: Use HTML attributes as is, type, value, placeholder ...
+- Performant: Uses uncontrolled components, results in data stored using ref (not in component state) and causes no re-renders on input change or other events.
+- Easy to port: Future proof, incase in future we need to switch to Vue, Angular or even vanilla JS. Minimal effort would be required to port.
+- Self contained: Multiple `Form` components can be used in a single parent component. All data is managed natively by the form and just callback is required to get form data out of it.
+- Flexible: pass on options and validation as is, no specific function/props would be required.
+
+
+### Notes
+
+- Output can be run by `npm i` and `npm start`
+- Output demoes 3 modes. a) Prefilled and add/edit inputs based on consitions. b) Form creation from external data, like from API response and render accordingly. c) custom validation using native HTML input pattern attribute. (passed pattern may not be correct, so can be tried out with needed regex)
+- CSS is just to making things presentable.
+- Very basic Warn notification in case consumer missed required props to make form correctly render (though TS warns early). Under assumption that Form component would be used among different teams and might be packaged as npm module etc, so it's crucial for developer experience to notify users about things missed/incorrect.
+- Tests only include when callback is called on form submit, because form change and submission are native events and we don't need to test it. And also Warn module is out of scope.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
