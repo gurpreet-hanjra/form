@@ -1,0 +1,56 @@
+:root {
+    --primary-color: #0C072C;
+    --secondary-color: #F2F2F2;
+    --required-color: #F44444;
+    --input-border-color: #7C7171;
+    --border-radius: 5px;
+}
+
+body {
+    padding: 32px;
+    background-color: var(--primary-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    align-self: center;
+    margin-bottom: 32px;
+    padding: 32px;
+    border-radius: var(--border-radius);
+    background: var(--secondary-color);
+}
+
+input[type="text"],
+input[type="number"], 
+input[type="email"] {
+    border-radius: var(--border-radius);
+    padding: 12px 8px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border: 1px solid var(--input-border-color);
+}
+
+input:required {
+    border-right-color: var(--required-color);
+    border-right-width: 5px;
+  }
+
+label {
+    margin-bottom: 8px;
+}
+
+p {
+    font-style: italic;
+}
+
+input[type="submit"], button {
+    border-radius: var(--border-radius);
+    padding: 12px 8px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+}
